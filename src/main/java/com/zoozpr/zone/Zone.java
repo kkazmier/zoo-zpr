@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -20,7 +21,17 @@ import java.util.List;
 public class Zone extends NamedEntity {
     @OneToMany(mappedBy="zone", fetch = FetchType.LAZY)
     @JsonIgnore
-    private List<Animal> animals;
+    private List<Animal> animals = new ArrayList<>();
+
+    public Integer getAnimalQuantity() {
+        return animals.size();
+    }
+
+    public Integer getWholeConsumption() {
+        return animals.stream()
+                .mapToInt(a -> a.getFeedQuantity())
+                .sum();
+    }
 
     @Override
     public String toString() {
