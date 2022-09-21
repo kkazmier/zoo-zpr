@@ -5,6 +5,7 @@ import com.zoozpr.animal.Animal;
 import com.zoozpr.model.NamedEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -15,6 +16,7 @@ import javax.persistence.Table;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name = "animal_types", schema = "public")
 public class AnimalType extends NamedEntity {
