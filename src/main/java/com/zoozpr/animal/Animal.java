@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.zoozpr.animaltype.AnimalType;
 import com.zoozpr.model.NamedEntity;
 import com.zoozpr.zone.Zone;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -18,6 +15,11 @@ import javax.persistence.*;
 @Entity
 @Table(name = "animals", schema = "public")
 public class Animal extends NamedEntity {
+    public Animal(Integer feedQuantity, Zone zone) {
+        this.feedQuantity = feedQuantity;
+        this.zone = zone;
+    }
+
     @Column(name = "feed_quantity", nullable = false)
     private Integer feedQuantity;
 
