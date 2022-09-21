@@ -21,7 +21,7 @@ public class ZoneServiceImpl implements ZoneService {
 
     @Override
     public List<Zone> getAllZones() {
-        List<Zone> zones = (List<Zone>) zoneRepository.findAll();
+        List<Zone> zones = zoneRepository.findAll();
         return zones;
     }
 
