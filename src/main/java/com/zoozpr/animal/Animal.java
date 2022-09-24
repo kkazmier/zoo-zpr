@@ -23,7 +23,7 @@ public class Animal extends NamedEntity {
     @Column(name = "feed_quantity", nullable = false)
     private Integer feedQuantity;
 
-    @OneToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "animal_type_id", referencedColumnName = "id")
     @JsonIgnore
     private AnimalType animalType;
