@@ -29,7 +29,7 @@ public class Zone extends NamedEntity {
 
     public Integer getWholeConsumption() {
         return animals.stream()
-                .mapToInt(a -> a.getFeedQuantity())
+                .mapToInt(a -> a.getFeedConsumption())
                 .sum();
     }
 
