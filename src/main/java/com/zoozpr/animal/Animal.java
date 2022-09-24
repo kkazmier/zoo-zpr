@@ -15,13 +15,13 @@ import javax.persistence.*;
 @Entity
 @Table(name = "animals", schema = "public")
 public class Animal extends NamedEntity {
-    public Animal(Integer feedQuantity, Zone zone) {
-        this.feedQuantity = feedQuantity;
+    public Animal(Integer feedConsumption, Zone zone) {
+        this.feedConsumption = feedConsumption;
         this.zone = zone;
     }
 
     @Column(name = "feed_quantity", nullable = false)
-    private Integer feedQuantity;
+    private Integer feedConsumption;
 
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "animal_type_id", referencedColumnName = "id")
@@ -37,7 +37,7 @@ public class Animal extends NamedEntity {
     public String toString() {
         return "Animal{" +
                 "id=" + super.getId() +
-                "feedQuantity=" + feedQuantity +
+                "feedQuantity=" + feedConsumption +
                 ", animalType=" + animalType +
                 ", zone=" + zone +
                 '}';
