@@ -8,4 +8,5 @@ public interface AnimalService {
     List<Animal> getAllByName(String name);
     void add(Animal animal);
     Optional<Animal> get(Long id);
+    AnimalFullInfo getAnimalFullInfo(Long id);
 }
