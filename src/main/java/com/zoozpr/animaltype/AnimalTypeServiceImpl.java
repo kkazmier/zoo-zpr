@@ -1,14 +1,16 @@
 package com.zoozpr.animaltype;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-public class AnimalServiceImpl implements AnimalTypeService {
+@Service
+public class AnimalTypeServiceImpl implements AnimalTypeService {
     private final AnimalTypeRepository animalTypeRepository;
 
     @Autowired
-    public AnimalServiceImpl(AnimalTypeRepository animalTypeRepository) {
+    public AnimalTypeServiceImpl(AnimalTypeRepository animalTypeRepository) {
         this.animalTypeRepository = animalTypeRepository;
     }
 
