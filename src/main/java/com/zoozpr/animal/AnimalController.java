@@ -32,13 +32,18 @@ public class AnimalController {
     @PostMapping(value = "/addNewAnimalToZone/{zoneId}", consumes = {"application/json"})
     public Animal addNewAnimalToZone(@PathVariable Long zoneId,
                                      @RequestParam("name") String name,
-                                     @RequestParam("feedQuantity") Integer feedQuantity) {
+                                     @RequestParam("feedQuantity") Integer feedConsumption) {
         Animal animal = new Animal();
         animal.setName(name);
-        animal.setFeedQuantity(feedQuantity);
+        animal.setFeedConsumption(feedConsumption);
         Zone zone = zoneService.getZone(zoneId).orElseThrow();
         animal.setZone(zone);
         animalService.add(animal);
         return new Animal();
+    }
+
+    @GetMapping("/getAnimalFullInfo/{id}")
+    public AnimalFullInfo getAnimalFullInfo(@PathVariable Long id) {
+        return animalService.getAnimalFullInfo(id);
     }
 }
