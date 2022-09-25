@@ -16,7 +16,7 @@ public class ZoneController {
         this.zoneService = zoneService;
     }
 
-    @GetMapping("/all")
+    @GetMapping("/allZones")
     public List<Zone> allZones() {
         return zoneService.getAllZones();
     }
