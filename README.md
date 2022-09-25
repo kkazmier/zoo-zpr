@@ -1,4 +1,8 @@
 # zoo-zpr spring boot application
+## technology stack
+- spring boot
+- H2 database
+- gradle
 ## run
 
 ```shell
@@ -7,17 +11,16 @@ cd zoo-zpr
 gradle bootRun
 ```
 
-
 ## endpoints
 - animals
-  - get all animals ```/animal/getAll``` 
-  - get all animals by name ```/animal/getAllByName/{name}```
-  - add animal to zone ```/animal/addNewAnimalToZone/{zoneId}```
-  - return full info about animal (id, name, zone name, type,... etc) ```/getAnimalFullInfo/{id}```
+  - get all animals ```GET``` ```/animal/getAll``` 
+  - get all animals by name ```GET``` ```/animal/getAllByName/{name}```
+  - add animal to zone ```POST``` ```/animal/addNewAnimalToZone/{zoneId}```
+  - return full info about animal (id, name, zone name, type,... etc) ```GET``` ```/getAnimalFullInfo/{id}```
 - zone
-  - get all zones ```/zone/allZones```
-  - create new zone ```/zone/new```
-  - get all animals from given zone ```getAnimalsFromZone/{zoneId}```
+  - get all zones ```GET``` ```/zone/allZones```
+  - create new zone ```POST``` ```/zone/new```
+  - get all animals from given zone ```GET``` ```getAnimalsFromZone/{zoneId}```
 - report
-  - return zone with least animal quantity ```/report/leastPopulatedZone```
-  - return zone with greatest feed consumption ```/report/zoneOfGreatestConsumption```
+  - return zone with least animal quantity ```GET``` ```/report/leastPopulatedZone```
+  - return zone with greatest feed consumption ```GET``` ```/report/zoneOfGreatestConsumption```
